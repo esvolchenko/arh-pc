@@ -1,119 +1,91 @@
----
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+# Лабораторная работа №4. Язык разметки Markdown.
 
-## Generic otions
-lang: ru-RU
-toc-title: "Содержание"
+'''
+__Автор:__ Волченко Елена Сергеевна
+'''
 
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+##Цель работы
+__Цель:__освоение процедуры оформления отчетов с помощью легковесного языка разметки Markdown.
 
-## Pdf output format
-toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
-fontsize: 12pt
-linestretch: 1.5
-papersize: a4
-documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
-mainfont: PT Serif
-romanfont: PT Serif
-sansfont: PT Sans
-monofont: PT Mono
-mainfontoptions: Ligatures=TeX
-romanfontoptions: Ligatures=TeX
-sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
-indent: true
-header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
----
+##Ход работы
+###Основная часть
+1. Открыла терминал и перешла в каталог курса, сформированный при выполнении лабораторной работы №3.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/1.png)
+Обновила локальный репозиторий.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/2.png)
+2. Перешла в каталог с шаблоном отчета по лабораторной работе №4.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/3.png)
+3. Провела компиляцию шаблона с использованием Makefile. Возникла ошибка, для ее исправления я установила __TeX live__ и __Pandoc__.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/4.png)
+	3.1 Установка __TeX live__
+		3.1.1 Скачала архив _install-tl-unx.tar.gz_.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/5.png)
+		3.1.2 Распаковала архив.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/6.png)
+		3.1.3 Перешла в распакованную папку.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/7.png)
+		3.1.4 Запустила скрипт install-tl c root правами.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/8.png)
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/9.png)
+		3.1.4 Добавила /usr/local/texlive/2022/bin/x86_64-linux в PATH.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/10.png)
+	3.2 Установка __Pandoc__.
+		3.2.1 Проверила версию Pandoc.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/11.png)
+		3.2.2 Скачала архивы с исходными файлами(pandoc, pandoc-crossref)
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/12.png)
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/13.png)
+		3.2.3 Распаковала архивы.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/14.png)
+		3.2.4 Копирование файлов. При копировании возникла ошибка, поэтому я самостоятельно переместила и распаковала рхивы в каталоге tmp(рис.1), а далее уже скопировала в другой каталог.(рис.2).
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/15.png)
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/16.png)
+		3.2.5 При помощи команды _ls_ проверила корректность выполнения.
+		![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/17.png)
+	3.3 Снова перешла в каталог курса и попыталась скомпелировать нужные файлы. Не удалось получить файл report.pdf. Попыталась установить пакет, предоставляющий нужную команду(lualatex).
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/18.png)
+	Все равно возникла ошибка. 
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/19.png)
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/20.png)
+	В интернете нашла команду для установки полного пакета TeX live.
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/21.png)
+	Компилировала нужные файлы.
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/22.png)
+	Проверила корректность выполнения.
+	![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/23.png)
+4. Удалила полученные файлы. Проверила корректность выполнения.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/24.png)
+5. Открыла файл report.md c помощью текстового редактора gedit. 
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab04/report/image/25.png)
+6. Заполнила отчет работы.
+7. Загрузила фалы на Github.
+        '''
+        cd ~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc
+        git add .
+        git commit -am 'feat(main): add files lab-4'
+        git push
+        '''
+###Выводы
+__Выводы:__ Во время выполнения заданий я ознакомилась с некоторыми новыми командами взаимодействия с GitHub, созданием файлов и работой при помощи Markdown.
 
-# Цель работы
+##Задание для самостоятельно работы
+1. Перешла в каталог курса.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab03/report/image/1.png)
+2. Открыла файл _report.md_ с помощью текстового редактора gedit. Оформила отчет прошлой лабораторной работы.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab03/report/image/2.png)
+3. Скомпилировала файл _report.md_
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab03/report/image/3.png)
+4. Проверила корректность выполнения.
+![.](~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc/labs/lab03/report/image/4.png)
+5. Загрузила файл на Github. [Репозиторий с отчетом](https://github.com/esvolchenko/study_2022-2023_arh-pc/tree/master/labs/lab03/report)
+        '''
+        cd ~/work/study/2022-2023/"Архитектура компьютера"/study_2022-2023_arh-pc
+        git add .
+        git commit -am 'feat(main): add files lab-3'
+        git push
+        '''
+###Выводы
+__Выводы:__ Во время выполнения задания для самостоятельной работы я закрепила знания, полученный при выполнении заданий основной части работы. 
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
-
-# Задание
-
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
-
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
-
-# Выполнение лабораторной работы
-
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001])
-
-![Название рисунка](image/placeimg_800_600_tech.jpg){ #fig:001 width=70% }
-
-# Выводы
-
-Здесь кратко описываются итоги проделанной работы.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
+##Общие выводы
+Я ознакомилась с некоторыми новыми командами взаимодействия с GitHub: освоила процедуру оформления отчетов с помощью легковесного языка разметки Markdown.
